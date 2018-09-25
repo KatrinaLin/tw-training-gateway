@@ -1,0 +1,29 @@
+zuul:
+  ignoredServices: '*'
+  routes:
+    products:
+      retryable: true
+      stripPrefix: false
+      path: /api/products/**
+      serviceId: products
+products:
+  ribbon:
+    listOfServers: http://localhost:8081, http://localhost:8082, http://localhost:8083
+    retryableStatusCodes: 404, 500
+    NFLoadBalancerRuleClassName: com.example.gateway.CustomRule
+
+
+ribbon:
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  ConnectTimeout: 2000
+  ReadTimeout: 2000
+
+hystrix:
+  command:
+    products:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
