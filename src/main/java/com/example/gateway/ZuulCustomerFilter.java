@@ -29,7 +29,7 @@ public class ZuulCustomerFilter extends ZuulFilter {
     @Override
     public Object run() {
         HttpServletResponse response = RequestContext.getCurrentContext().getResponse();
-        response.addHeader("x-stop-time", "hule");
+        response.addHeader("x-stop-time", "{}");
         return null;
     }
 }
