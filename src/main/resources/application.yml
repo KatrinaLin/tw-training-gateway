@@ -8,14 +8,14 @@ zuul:
       serviceId: products
 products:
   ribbon:
-    listOfServers: http://localhost:8081, http://localhost:8082, http://localhost:8083
+    listOfServers: http://localhost:8081, http://localhost:8082
     retryableStatusCodes: 404, 500
     NFLoadBalancerRuleClassName: com.example.gateway.CustomRule
 
 
 ribbon:
-  MaxAutoRetries: 1
-  MaxAutoRetriesNextServer: 1
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 3
   OkToRetryOnAllOperations: true
   ConnectTimeout: 2000
   ReadTimeout: 2000
