@@ -13,7 +13,7 @@ zuul:
       serviceId: products
 products:
   ribbon:
-    listOfServers: http://localhost:8081, http://localhost:8082
+    listOfServers: http://localhost:8081
     retryableStatusCodes: 404, 500
     NFLoadBalancerRuleClassName: com.example.gateway.CustomRule
 
