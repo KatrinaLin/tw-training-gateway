@@ -15,5 +15,5 @@ insert into users(id, username, password)values
 ('admin-id', 'admin','$2a$04$Brutw80K6C4uLc2t/aJfnOJqcs0MozN9nIz9g3mA5zeXy4c7S3zKG');
 
 insert into authorities(id, user_id, role) values 
-('hule-role-id', 'hule-id', 'USER'),
-('admin-role-id', 'admin-id', 'ADMIN');
+('hule-role-id', 'hule-id', 'ROLE_USER'),
+('admin-role-id', 'admin-id', 'ROLE_ADMIN');
