@@ -33,9 +33,9 @@ public class ZuulCustomTokenFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        RequestContext requestContext = RequestContext.getCurrentContext();
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
+        RequestContext requestContext = RequestContext.getCurrentContext();
         requestContext.addZuulRequestHeader("x-username", authentication.getName());
         requestContext.addZuulRequestHeader("x-authorities", toStringForAuthorities(authentication.getAuthorities()));
         return null;
