@@ -39,7 +39,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(new CustomTokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class);
     }
 
-
     @Bean
     public CustomBasicAuthenticationProvider customBasicAuthenticationProvider() {
         return new CustomBasicAuthenticationProvider();

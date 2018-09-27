@@ -26,7 +26,7 @@ public class CustomTokenAuthenticationFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-        Authentication authenticate = null;
+        Authentication authenticate;
         try {
             String username = new String(Base64.getDecoder().decode(header.substring(6)));
             Authentication authRequest = new CustomTokenToken(username);
